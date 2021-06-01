@@ -1,0 +1,5 @@
+{
+    "port": 5000,
+    "mongoURI": "mongodb+srv://DmitriiBdnc:Metropolis1926@cluster0.s9tjq.mongodb.net/app?retryWrites=true&w=majority",
+    "jwtSecret": "dmitrii mern dev"
+}
