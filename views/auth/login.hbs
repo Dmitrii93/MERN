@@ -1,0 +1,77 @@
+<div class="auth">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a href="#login">Log in</a></li>
+        <li class="tab col s6"><a href="#register">Registration</a></li>
+
+      </ul>
+    </div>
+    <div id="login" class="col s6 offset-s3">
+      {{#if logError}}
+        <p class="alert">{{logError}}</p>
+      {{/if}}
+      <h2>Log in</h2>
+      <hr />
+      <form action="/auth/login" method="POST" class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" name="email" class="validate" required />
+            <label for="email">Email</label>
+            <span class="helper-text" data-error="Enter the valid email"></span>
+          </div>
+          <div class="input-field col s12">
+            <input id="password" type="password" name="password" class="validate" required />
+            <label for="password">Password</label>
+            <span class="helper-text" data-error="Enter the password"></span>
+          </div>
+
+          <input type="hidden" name="_csrf" value="{{csrf}}" />
+          <p><a href="/auth/reset">Forgot password?</a></p>
+
+          <div class="input-field col s12">
+            <button class="btn btn-primary" type="submit">Log in</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div id="register" class="col s6 offset-s3">
+      {{#if regError}}
+        <p class="alert">{{regError}}</p>
+      {{/if}}
+      <h2>Register</h2>
+      <hr />
+      <form action="/auth/register" method="POST" class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="remail" type="email" name="email" class="validate" required />
+            <label for="remail">Email</label>
+            <span class="helper-text" data-error="Enter the valid email"></span>
+          </div>
+          <div class="input-field col s12">
+            <input id="name" type="text" name="name" class="validate" required />
+            <label for="name">Name</label>
+            <span class="helper-text" data-error="Enter your name"></span>
+          </div>
+          <div class="input-field col s12">
+            <input id="rpassword" type="password" name="password" class="validate" required />
+            <label for="rpassword">Password</label>
+            <span class="helper-text" data-error="Enter the password"></span>
+          </div>
+          <div class="input-field col s12">
+            <input id="conpassword" type="password" name="conpassword" class="validate" required />
+            <label for="conpassword">Confirm password</label>
+            <span class="helper-text" data-error="Confirm the password"></span>
+          </div>
+          <input type="hidden" name="_csrf" value="{{csrf}}" />
+          <div class="input-field col s12">
+            <button class="btn btn-primary" type="submit">Register</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

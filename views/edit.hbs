@@ -1,0 +1,34 @@
+<h1>Edit {{course.title}}</h1>
+<div class="row">
+  <form action="/courses/edit" method="POST" class="col s12">
+    <div class="input-field col s12">
+      <input value="{{course.title}}" id="title" type="text" name="title" class="validate" required />
+      <label for="title">Title</label>
+      <span class="helper-text" data-error="Enter the title"></span>
+    </div>
+    <div class="input-field col s12">
+      <input value="{{course.price}}" id="price" type="number" name="price" class="validate" required min="1" />
+      <label for="price">Price</label>
+      <span class="helper-text" data-error="Enter the price"></span>
+    </div>
+    <div class="input-field col s12">
+      <input value="{{course.image}}" id="image" type="text" name="image" class="validate" required />
+      <label for="image">Image's URL</label>
+      <span class="helper-text" data-error="Enter the image's URL"></span>
+    </div>
+    <input type="hidden" name="id" id="id" value="{{course._id}}" />
+    <input type="hidden" name="_csrf" value="{{csrf}}" />
+    <div class="input-field col s12">
+      <button class="btn btn-primary" type="submit">Edit Course</button>
+    </div>
+
+  </form>
+  <form action="/courses/delete" method="POST" class="col s12">
+    <input type="hidden" name="id" value="{{course._id}}" />
+    <input type="hidden" name="_csrf" value="{{csrf}}" />
+    <div class="input-field col s12">
+      <button class="btn red" type="submit">Delete Course</button>
+    </div>
+
+  </form>
+</div>
